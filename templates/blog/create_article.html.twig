@@ -11,18 +11,19 @@
     {{form_start(formArticle)}}
 
         {{form_row(formArticle.title, {'attr': {'placeholder': "Titre de l'article"}}) }}
+        {{form_row(formArticle.category)}}
         {{form_row(formArticle.content, {'attr': {'placeholder' : "Contenu de l'article"}})}}
         {{form_row(formArticle.image, {'attr': {'placeholder' : "Image de l'article"}})}}
+        <hr>
         {% if editMode %}
             <button type="submit" class="btn btn-info">💾 Enregistrer</button>
         {% else %}
             <button type="submit" class="btn btn-info">📝 Ajouter</button>
         {% endif %}
-        
+        <a href="{{path('blog')}}" class="btn btn-secondary">📰 Blog</a>
+        <a href="{{path('article_create')}}" class="btn btn-secondary">➕ Créer une nouvelle articles</a>
 
     {{form_end(formArticle)}}
-    <hr>
-    <a href="{{path('blog')}}" class="btn btn-secondary">📰 Blog</a>
-    <a href="{{path('article_create')}}" class="btn btn-secondary">➕ Créer une nouvelle articles</a>
+
 
 {% endblock %}

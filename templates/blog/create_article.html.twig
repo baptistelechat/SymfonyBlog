@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Création d'un article{% endblock %}
+
+{% form_theme formArticle 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+
+    <h1>Création d'un article</h1>
+
+    {{form_start(formArticle)}}
+
+        {{form_row(formArticle.title, {'attr': {'placeholder': "Titre de l'article"}}) }}
+        {{form_row(formArticle.content, {'attr': {'placeholder' : "Contenu de l'article"}})}}
+        {{form_row(formArticle.image, {'attr': {'placeholder' : "Image de l'article"}})}}
+        {% if editMode %}
+            <button type="submit" class="btn btn-info">💾 Enregistrer</button>
+        {% else %}
+            <button type="submit" class="btn btn-info">📝 Ajouter</button>
+        {% endif %}
+        
+
+    {{form_end(formArticle)}}
+    <hr>
+    <a href="{{path('blog')}}" class="btn btn-secondary">📰 Blog</a>
+    <a href="{{path('article_create')}}" class="btn btn-secondary">➕ Créer une nouvelle articles</a>
+
+{% endblock %}

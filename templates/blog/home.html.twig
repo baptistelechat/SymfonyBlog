@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+    <h1>Bienvenue sur mon blog</h1>
+
+    {# <h1>{{ title }}</h1>
+
+    {% if age>18 %}
+        <h2>Tu est majeur</h2>
+    {% else %}
+        <h2>Tu est mineur</h2>
+    {% endif %} #}
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam ipsam impedit enim repellat officia non cupiditate consequuntur fugiat sunt itaque aliquam necessitatibus alias repellendus reprehenderit sint unde minima, debitis corporis? Eos excepturi corrupti quia quasi dolor animi sapiente veritatis. Officia!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam ipsam impedit enim repellat officia non cupiditate consequuntur fugiat sunt itaque aliquam necessitatibus alias repellendus reprehenderit sint unde minima, debitis corporis? Eos excepturi corrupti quia quasi dolor animi sapiente veritatis. Officia!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam ipsam impedit enim repellat officia non cupiditate consequuntur fugiat sunt itaque aliquam necessitatibus alias repellendus reprehenderit sint unde minima, debitis corporis? Eos excepturi corrupti quia quasi dolor animi sapiente veritatis. Officia!</p>
+    <hr>
+    <a href="{{path('blog')}}" class="btn btn-secondary">📰 Blog</a>
+    <a href="{{path('article_create')}}" class="btn btn-secondary">➕ Créer une nouvelle articles</a>
+
+{% endblock %}
+

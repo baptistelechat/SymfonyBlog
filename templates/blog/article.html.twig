@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Articles{% endblock %}
+
+{% block body %}
+    <article>
+        <h2>{{article.title}}</h2>
+        <div class="metadata">Ecrit le {{article.createdAt | date('d/m/Y')}} à {{article.createdAt | date('H:i')}} dans la catégorie ...</div>
+        <div class="content">
+            <img src="{{article.image}}" alt="">
+            <p>{{article.content | raw}}</p>
+            <hr>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis repudiandae eaque quas officiis asperiores! A cumque molestias perspiciatis neque deserunt dolore fuga corrupti natus ut odio, itaque incidunt, ducimus vero ex fugit nesciunt, nisi sapiente aliquid eum nobis nemo. Impedit nihil laudantium consequuntur placeat sapiente odio perferendis iusto illum velit?</p>
+            <p>Ullam, fuga. Iure dolores quis deserunt? Vitae quod quis exercitationem odio, minus esse vel quae modi suscipit deleniti accusamus est et, dicta libero ipsam aliquid eius eveniet cum quas ex inventore! Sint optio obcaecati inventore temporibus soluta maxime fugit nisi, blanditiis ipsa officia quae quisquam similique, recusandae excepturi quam. Voluptate!</p>
+        </div>
+    </article>
+    <hr>
+    <a href="{{path('home')}}" class="btn btn-secondary">🏠 Accueil</a>
+    <a href="{{path('blog')}}" class="btn btn-secondary">📰 Blog</a>
+    <a href="{{path('article_create')}}" class="btn btn-secondary">➕ Créer une nouvelle articles</a>
+
+{% endblock %}

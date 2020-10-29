@@ -15,8 +15,12 @@
         </div>
     </article>
     <hr>
-    <a href="{{path('home')}}" class="btn btn-secondary">🏠 Accueil</a>
-    <a href="{{path('blog')}}" class="btn btn-secondary">📰 Blog</a>
-    <a href="{{path('article_create')}}" class="btn btn-secondary">➕ Créer une nouvelle articles</a>
+    <div class="buttons">
+        <a href='{{ path('article_edit', {'id':article.id}) }}' class="btn btn-primary">📝 Modifier l'article</a>
+        <a href="{{path('home')}}" class="btn btn-secondary">🏠 Accueil</a>
+        <a href="{{path('blog')}}" class="btn btn-secondary">📰 Blog</a>
+        <a href="{{path('article_create')}}" class="btn btn-secondary">➕ Créer une nouvelle articles</a>
+    </div>
+    
 
 {% endblock %}

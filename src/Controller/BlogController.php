@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Entity\Comment;
 use App\Form\ArticleType;
+use App\Form\CommentType;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -67,10 +69,23 @@ class BlogController extends AbstractController
     /**
      * @Route("/blog/{id}", name="article_show")
      */
-    public function article(Article $article)
+    public function article(Article $article, Request $request, EntityManagerInterface $manager)
     {
+        $comment = new Comment();
+        $form = $this->createForm(CommentType::class, $comment);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $comment->setCreatedAt(new \DateTime())
+                    ->setArticle($article);
+            $manager->persist($comment);
+            $manager->flush();
+
+            return $this->redirectToRoute('article_show',['id'=>$article->getId()]);
+        }
+
         return $this->render('blog/article.html.twig', [
-            'article' => $article
+            'article' => $article,
+            'CommentForm' => $form->createView()
         ]);
     }
 }

@@ -3,7 +3,7 @@
 
 A fake blog make with Symfony.
 
-This project was bootstrapped use [Symfony](https://symfony.com/).
+This project was bootstrapped use [Symfony](https://symfony.com/) and was inspiring by Youtube's videos of Lior CHAMLA : [🎵 Symfony en 4 heures](https://www.youtube.com/playlist?list=PLpUhHhXoxrjdQLodxlHFY09_9XzqdPBW8).
 
 ## Installation
 Clone this repository and install packages.

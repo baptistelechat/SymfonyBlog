@@ -6,10 +6,29 @@ A fake blog make with Symfony.
 This project was bootstrapped use [Symfony](https://symfony.com/).
 
 ## Installation
-Clone this repository, install nodejs's packages and start server.
+Clone this repository and install packages.
 
 ```bash
-git clone https://github.com/baptistelechat/SymfonyBlog.git && composer install && symfony server:start
+git clone https://github.com/baptistelechat/SymfonyBlog.git && composer install
+```
+Then configure and initialize MySQL database.
+```bash
+# customize this line in .env
+DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=5.7"
+
+# create database
+php bin/console doctrine:database:create
+
+# load migrations
+php bin/console doctrine:migrations:migrate
+
+# load fixtures
+php bin/console doctrine:fixtures:load
+
+```
+Finally start the server.
+```bash
+symfony server:start
 ```
 
 ## Maintainers
